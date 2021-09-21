@@ -27,9 +27,8 @@ db.select('*').from('users').then(data=>{
 
 app.use(express.json());
 app.use(cors());
-app.get('/',(req,res)=>{
-	res.send('success');
-})
+
+app.get('/',(req,res)=>{res.send('success')})
 
 app.post('/signin',(req,res)=>{handleSignin(req,res,db,bcrypt)})
 

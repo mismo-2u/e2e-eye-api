@@ -14,11 +14,13 @@ import {handleApiCall} from './controllers/image.js';
 const db = knex ({
   // process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
   client: 'pg',
-  connectionString: process.env.DATABASE_URL,
-    ssl:
-    {
-      rejectUnauthorized: false
-    }
+  connection : {
+    connectionString: process.env.DATABASE_URL,
+      ssl:
+      {
+        rejectUnauthorized: false
+      }
+  }
 });
 
 db.select('*').from('users').then(data=>{

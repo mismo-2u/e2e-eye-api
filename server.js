@@ -10,9 +10,8 @@ import handleProfileGet from './controllers/profile.js';
 import {handleImage} from './controllers/image.js';
 import {handleApiCall} from './controllers/image.js';
 
-
+process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
 const db = knex ({
-  process.env.NODE_TLS_REJECT_UNAUTHORIZED = 0; 
   client: 'pg',
     connection:{
       connectionString: process.env.DATABASE_URL,

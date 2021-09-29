@@ -1,6 +1,6 @@
 import Clarifai from 'clarifai';
 
-let app = new Clarifai.App({apiKey: '4e6d0ec57f204cb99072d63f71c453ef'});
+let app = new Clarifai.App({apiKey: process.env.API_CLRIFAI});
 
 export const handleApiCall = function(req,res){
 	app.models.predict({id:'f76196b43bbd45c99b4f3cd8e8b40a8a', 
